@@ -1,0 +1,186 @@
+.chat-header-main{
+    background-color: #00A884;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.chat-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+    background-color: #00A884;
+    color: white;
+    font-size: 20px;
+}
+
+.chat-header span{
+    font-size: 14px;
+}
+
+
+.chat-header-main .bi {
+    color: white;
+    display: flex;
+    justify-content: end;
+    font-size: 30px;
+}
+
+
+
+.loading {
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+}
+
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    background-color: #f9f9f9;
+    background-image: url('/public/imagenes/fondo\ whatsapp.jpg');
+}
+
+.mensajes-container {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.message {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 10px;
+    max-width: 70%;
+    word-wrap: break-word;
+    font-size: 14px;
+}
+
+.message.sent {
+    background-color: #00A884;
+    color: white;
+    align-self: flex-end;
+}
+
+.message.received {
+    background-color: #202C33;
+    color: white;
+    align-self: flex-start;
+}
+
+.input-container {
+    display: flex;
+    padding: 10px;
+    background-color: #202C33;
+    border-top: 1px solid black;
+}
+
+.input-container input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid black;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.input-container button {
+    padding: 10px 20px;
+    margin-left: 10px;
+    background-color: #00A884;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.input-container button:hover {
+    background-color: #00A884;
+}
+
+.delete-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: white; 
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s ease;
+}
+
+.delete-button:hover {
+    color: red; 
+}
+
+.message-actions {
+    display: flex;
+    gap: 10px; 
+    justify-content: flex-end; 
+    margin-top: 5px; 
+}
+
+.message.sent .message-actions {
+    align-self: flex-end;
+}
+
+.message.sent:hover .delete-button {
+    visibility: visible;
+}
+
+.message.received .delete-button {
+    display: none;
+}
+
+@media (width <= 500px){
+    .imagen-div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 65px;
+        height: 65px;
+        border-radius: 50%;
+        overflow: hidden;
+        flex-shrink: 0;
+    }
+    
+} 
+
+@media (width >= 500px){
+    .div_volver{
+        flex: none;
+    }
+    .escribir-mensaje{
+        gap: 0;
+    }
+    .btn-div-bottom-3{
+        margin-right: 5px;
+    }
+}
+
+@media (width >= 1500px){
+    .btn-div-bottom-1, .btn-div-bottom-2, .btn-div-bottom-3{
+    display: flex;
+    width: 50px;
+    font-size: 25px;
+    }
+    .botones {
+        gap: 40px;
+        font-size: 25px;
+        align-items: center;
+        display: flex;
+    }
+    .contacto{
+        font-size: 20px;
+    }
+} 

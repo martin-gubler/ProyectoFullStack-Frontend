@@ -1,0 +1,25 @@
+.verifyEmail-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: #202C33;
+    color: white;
+    font-family: Roboto, sans-serif;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.verifyEmail-container p{
+    margin-bottom: 20px;
+    font-size: 1em;
+    text-align: center;
+}
+
+.verifyEmail-container h2 {
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    text-align: center;
+}
