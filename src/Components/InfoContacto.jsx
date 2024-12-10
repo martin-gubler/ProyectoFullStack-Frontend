@@ -8,13 +8,15 @@ const InfoContacto = () => {
   const { receiver_id } = useParams()
   const [contacto, setContacto ] = useState(null)
 
+
+  console.log('receiver_id:', receiver_id)
   useEffect(() => {
     const fetchInfoContacto = async () => {
       try {
           const response = await fetch(`${ENVIROMENT.URL_BACKEND}/api/contacts/InfoContacto/${receiver_id}`, {
               headers: getAuthenticatedHeaders()
           });
-          
+          console.log(response)
           if(!response.ok){
             throw new Error(`Error en la solicitud: ${response.statusText}`)
           }
