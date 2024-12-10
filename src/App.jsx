@@ -27,7 +27,7 @@ function App() {
       <Route element={<ProtectedRoute/>}>
         <Route path='/' element = {<ListaContactos/>}/>
         <Route path='/conversation/:receiver_id' element={ <Conversacion/>}/>
-        <Route path='/infoContacto/:receiver_id' element={ <InfoContacto/> }/>
+        <Route path='/InfoContacto/:receiver_id' element={ <InfoContacto/> }/>
       </Route>
     </Routes>
   )

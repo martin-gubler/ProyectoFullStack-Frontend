@@ -1,25 +1,51 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import './InfoContacto.css'
+import { getAuthenticatedHeaders } from '../fetching/fetching.js'
+import ENVIROMENT from '../enviroment.js'
 const InfoContacto = () => {
 
   const { receiver_id } = useParams()
-  const contacto = data.find(contacto => contacto.id === parseInt(id))
-  console.log(id)
+  const [contacto, setContacto ] = useState(null)
+
+  useEffect(() => {
+    const fetchInfoContacto = async () => {
+      try {
+          const response = await fetch(`${ENVIROMENT.URL_BACKEND}/api/contacts/InfoContacto/${receiver_id}`, {
+              headers: getAuthenticatedHeaders()
+          });
+          
+          if(!response.ok){
+            throw new Error(`Error en la solicitud: ${response.statusText}`)
+          }
+          
+          const result = await response.json();
+          setContacto(result.data);
+      } catch (error) {
+          console.error('Error al obtener info del contacto:', error);
+      }
+  };
+  fetchInfoContacto()
+  }, [receiver_id])
+
+  if (!contacto) {
+    return <div>Cargando información del contacto...</div>;
+  }
+
 
   return (
     <div className='infoContacto-container'>
       <div className='div-titulo'>
         <div className='div-boton-volver'>
-          <button className='boton-volver'><Link className='link' to={'/conversacion/' + contacto.id }><i className="bi bi-chevron-compact-left"></i></Link></button>
+          <button className='boton-volver'><Link className='link' to={`/conversacion/${receiver_id}` }><i className="bi bi-chevron-compact-left"></i></Link></button>
         </div>
         <h2 className='titulo'>Informacion del contacto</h2>
       </div>
       <div className='div-imagen'>
-        <img className='imagen' src={contacto.thumbnail} alt="" />
+        <img className='imagen' src={contacto.profilePicture} alt="" />
       </div>
       <div>
-        <h2>{contacto.nombre_contacto}</h2>
+        <h2>{contacto.name}</h2>
       </div>
       <div className='div-botones'>
         <div className='div-boton-1'>

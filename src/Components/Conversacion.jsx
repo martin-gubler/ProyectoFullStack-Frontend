@@ -102,7 +102,7 @@ const Conversacion = () => {
                     <img className='imagen' src={contacto || 'default.jpg'} />
                 </div>
                 <div className='chat-header'> 
-                        <h3><Link to={`/infoContacto/${receiver_id}`}>{contacto || 'Cargando...'}</Link></h3>
+                        <h3><Link to={`/InfoContacto/${receiver_id}`}>{contacto || 'Cargando...'}</Link></h3>
                         <span>{estado}</span>
                 </div>
                 <div>
