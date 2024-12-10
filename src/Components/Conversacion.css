@@ -3,6 +3,7 @@
     display: flex;
     align-items: center;
     padding: 20px;
+    border-bottom: 1px solid black;
 }
 
 a {
@@ -70,12 +71,14 @@ a {
     background-color: #00A884;
     color: white;
     align-self: flex-end;
+    border: 1px solid gray
 }
 
 .message.received {
     background-color: #202C33;
     color: white;
     align-self: flex-start;
+    border: 1px solid gray
 }
 
 .input-container {
