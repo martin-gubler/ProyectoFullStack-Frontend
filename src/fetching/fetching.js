@@ -1,3 +1,5 @@
+import ENVIROMENT from "../enviroment";
+
 export const POST = async (URL_API, params) => {
 	try{
 		const response = await fetch(URL_API, {
@@ -33,11 +35,6 @@ export const GET = async (URL_API, params) => {
 	
 } 
 
-const getUnnauthenticatedHeadersForm = () => {
-	const unnauthenticatedHeaders = new Headers()
-	unnauthenticatedHeaders.set('x-api-key', '7f7a1160-16e7-47a6-b51d-8f78e85b592d')
-	return unnauthenticatedHeaders
-}
 
 
 const getUnnauthenticatedHeaders = () => {
@@ -62,7 +59,7 @@ const getAuthenticatedHeaders = () => {
 
 
 
-export {getAuthenticatedHeaders, getUnnauthenticatedHeaders, getUnnauthenticatedHeadersForm} 
+export {getAuthenticatedHeaders, getUnnauthenticatedHeaders} 
 	
 	
 	//Crear GET, PUT, DELETE

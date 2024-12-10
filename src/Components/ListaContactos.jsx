@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import './ListaContactos.css'
 import { getAuthenticatedHeaders} from '../fetching/fetching.js'
+import ENVIROMENT from '../enviroment.js'
 
 
 const ListaContactos = () => {
@@ -11,7 +12,7 @@ const ListaContactos = () => {
     useEffect(() => {
         const fetchContactos = async () => {
             try {
-                const response = await fetch('http://localhost:5000/api/contacts', {
+                const response = await fetch(`${ENVIROMENT.URL_BACKEND}/api/contacts`, {
                     headers: getAuthenticatedHeaders()
                 });
                 const result = await response.json();

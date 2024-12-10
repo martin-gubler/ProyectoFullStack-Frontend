@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import extractFormData from '../../utils/extractFormData.js'
 import { POST, getUnnauthenticatedHeaders } from '../../fetching/fetching.js'
-import ENVIROMENT from '../../enviroment'
+import ENVIROMENT from '../../enviroment.js'
 import './Login.css'
 
 const Login = () => {

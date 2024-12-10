@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import './Conversacion.css'
 import { Link, useParams } from 'react-router-dom'
 import { getAuthenticatedHeaders } from '../fetching/fetching.js'
+import ENVIROMENT from '../enviroment.js';
 
 const Conversacion = () => {
     const { receiver_id } = useParams(); // Obtener el ID del receptor desde la URL
@@ -17,7 +18,7 @@ const Conversacion = () => {
         const fetchConversacion = async () => {
             try {
                 const response = await fetch(
-                    `http://localhost:5000/api/messages/conversation/${receiver_id}`,
+                    `${ENVIROMENT.URL_BACKEND}/api/messages/conversation/${receiver_id}`,
                     {
                         headers: getAuthenticatedHeaders(),
                     }
@@ -50,7 +51,7 @@ const Conversacion = () => {
             const user_id = user_info?.id; // Asegúrate de que `id` esté presente
 
 
-            const response = await fetch(`http://localhost:5000/api/messages/send/${receiver_id}`, {
+            const response = await fetch(`${ENVIROMENT.URL_BACKEND}/api/messages/send/${receiver_id}`, {
                 method: 'POST',
                 headers: getAuthenticatedHeaders(),
                 body: JSON.stringify({ content: nuevoMensaje }),
@@ -79,7 +80,7 @@ const Conversacion = () => {
 
     const handleEliminarMensaje = async (message_id) => {
         try {
-            const response = await fetch(`http://localhost:5000/api/messages/delete/${message_id}`, {
+            const response = await fetch(`${ENVIROMENT.URL_BACKEND}/api/messages/delete/${message_id}`, {
                 method: 'DELETE',
                 headers: getAuthenticatedHeaders(),
             });
