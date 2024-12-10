@@ -2,7 +2,6 @@
 import Conversacion from './Components/Conversacion'
 import { Route, Routes } from 'react-router-dom'
 import ListaContactos from './Components/ListaContactos'
-import InfoContacto from './Components/InfoContacto'
 import VerifyEmail from './Components/VerifyEmail/VerifyEmail'
 import Register from './Components/Register/Register'
 import Login from './Components/Login/Login'
@@ -27,7 +26,6 @@ function App() {
       <Route element={<ProtectedRoute/>}>
         <Route path='/' element = {<ListaContactos/>}/>
         <Route path='/conversation/:receiver_id' element={ <Conversacion/>}/>
-        <Route path='/InfoContacto/:receiver_id' element={ <InfoContacto/> }/>
       </Route>
     </Routes>
   )

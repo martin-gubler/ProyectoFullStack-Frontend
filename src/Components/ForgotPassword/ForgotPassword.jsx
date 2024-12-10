@@ -26,12 +26,12 @@ import './ForgotPassword.css'
                 //Por ejemplo, pueden cambiar el estado para que aparezca un error
                 //De ser necesario cambien como responde su backend
                 if (!body.ok) {
-                    //setError()
+                    setError('Error en el servidor. Intentalo mas tarde')
                 }
                 console.log({ body })
             }
             catch (error){
-                //Errores se manejan aqui
+                console.error('Error en la solicitud de cambio de contrasena:', error);
             }
         }
 

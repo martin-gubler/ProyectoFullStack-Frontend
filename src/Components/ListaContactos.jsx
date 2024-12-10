@@ -16,7 +16,7 @@ const ListaContactos = () => {
                     headers: getAuthenticatedHeaders()
                 });
                 const result = await response.json();
-                setContactos(result.data.contacts || []); // Guarda los contactos en el estado
+                setContactos(result.data.contacts || []); 
             } catch (error) {
                 console.error('Error al obtener contactos:', error);
             }

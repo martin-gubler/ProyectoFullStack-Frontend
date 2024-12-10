@@ -5,10 +5,10 @@ import { getAuthenticatedHeaders } from '../fetching/fetching.js'
 import ENVIROMENT from '../enviroment.js';
 
 const Conversacion = () => {
-    const { receiver_id } = useParams(); // Obtener el ID del receptor desde la URL
+    const { receiver_id } = useParams(); 
 
     const [conversacion, setConversacion] = useState([]);
-    const [contacto, setContacto] = useState(null); // Para almacenar el nombre del contacto
+    const [contacto, setContacto] = useState(null);
     const [estado, setEstado] = useState(null)
     const [nuevoMensaje, setNuevoMensaje] = useState('');
     const [loading, setLoading] = useState(true);
@@ -47,8 +47,8 @@ const Conversacion = () => {
         if (!nuevoMensaje.trim()) return;
 
         try {
-            const user_info = JSON.parse(sessionStorage.getItem('user_info')); // Obtén y parsea el JSON
-            const user_id = user_info?.id; // Asegúrate de que `id` esté presente
+            const user_info = JSON.parse(sessionStorage.getItem('user_info'));
+            const user_id = user_info?.id;
 
 
             const response = await fetch(`${ENVIROMENT.URL_BACKEND}/api/messages/send/${receiver_id}`, {
@@ -60,13 +60,12 @@ const Conversacion = () => {
             if (response.ok) {
                 const newMessage = data.data.message;
     
-                // Asegúrate de agregar los datos correctos para el nuevo mensaje
                 setConversacion((prevConversacion) => [
                     ...prevConversacion,
                     {
                         ...newMessage,
-                        author: user_id, // Establece el ID del usuario actual como autor
-                        created_at: new Date().toISOString(), // Fecha actual como placeholder
+                        author: user_id, 
+                        created_at: new Date().toISOString(), 
                     },
                 ]);
                 setNuevoMensaje('');

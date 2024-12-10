@@ -38,15 +38,15 @@ const Register = () => {
         }
 
         setFieldErrors(errors);
-        return Object.keys(errors).length === 0; // Devuelve `true` si no hay errores
+        return Object.keys(errors).length === 0; 
     };
 
     const handleSubmitRegisterForm = async ( event ) => {
         event.preventDefault()
         setError('')
-        setFieldErrors({}); // Limpia errores previos
+        setFieldErrors({});
 
-        if (!validateFields()) return; // Si hay errores, no se envía el formulario
+        if (!validateFields()) return;
         
         
         setLoading(true)
