@@ -16,7 +16,7 @@ const InfoContacto = () => {
           const response = await fetch(`${ENVIROMENT.URL_BACKEND}/api/contacts/InfoContacto/${receiver_id}`, {
               headers: getAuthenticatedHeaders()
           });
-          console.log(response.body)
+          console.log(response.message)
           if(!response.ok){
             throw new Error(`Error en la solicitud: ${response.statusText}`)
           }
