@@ -1,5 +1,5 @@
 const ENVIROMENT = {
-    'URL_BACKEND': 'mongodb+srv://test:laWoWyaDFYMtsEle@cluster0.who5m.mongodb.net'
+    'URL_BACKEND': 'https://proyecto-full-stack-backend-kvplpzknj-martin-gublers-projects.vercel.app'
 }
 
 export default ENVIROMENT
