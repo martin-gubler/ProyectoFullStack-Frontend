@@ -87,7 +87,7 @@ return (
 
     <span className='login-footer'>Si aun no tienes cuenta puedes ir a <Link to='/register'> Registrarse</Link></span>
     <span className='login-footer'>Has olvidado tu contraseña? <Link to='/forgot-password'> Restablecer</Link></span>
-    <span className='login-footer'>Verifica tu email<Link to='/verify/:verification_token'> Restablecer</Link></span>
+    <span className='login-footer'>Verifica tu email<Link to='/verify'> Verificar email </Link></span>
 </div>
 )
 }
