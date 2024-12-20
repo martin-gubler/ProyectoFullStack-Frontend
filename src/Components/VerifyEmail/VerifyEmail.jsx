@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { POST } from '../../fetching/fetching';
+import { getUnnauthenticatedHeaders, POST } from '../../fetching/fetching';
 import './VerifyEmail.css';
 import ENVIROMENT from '../../enviroment.js';
 
@@ -14,7 +14,7 @@ const VerifyEmail = () => {
         try {
             const res = await POST(`${ENVIROMENT.URL_BACKEND}/api/auth/verify`, {
                 body: JSON.stringify({ token: verificationToken }),
-                headers: { 'Content-Type': 'application/json' },
+                headers: getUnnauthenticatedHeaders(),
             });
             setResponse(res);
         } catch (error) {
