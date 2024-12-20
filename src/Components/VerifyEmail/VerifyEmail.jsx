@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { getUnnauthenticatedHeaders, POST } from '../../fetching/fetching';
+import { getUnnauthenticatedHeaders, POST } from '../../fetching/fetching.js';
 import './VerifyEmail.css';
 import ENVIROMENT from '../../enviroment.js';
 
