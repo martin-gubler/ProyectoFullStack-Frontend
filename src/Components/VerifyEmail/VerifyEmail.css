@@ -23,3 +23,40 @@
     font-size: 1.8em;
     text-align: center;
 }
+
+.verifyEmail-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.verifyEmail-form {
+    margin-top: 20px;
+}
+
+.verifyEmail-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.verifyEmail-form input {
+    padding: 10px;
+    width: 80%;
+    max-width: 400px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.verifyEmail-form button {
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.verifyEmail-form button:hover {
+    background-color: #444;
+}
