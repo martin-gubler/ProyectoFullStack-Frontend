@@ -13,13 +13,13 @@ const VerifyEmail = () => {
         setIsLoading(true);
         try {
             const res = await POST(`${ENVIROMENT.URL_BACKEND}/api/auth/verify`, {
-                body: JSON.stringify({ token: verificationToken }),
+                body: JSON.stringify({ verification_token: verificationToken }),
                 headers: getUnnauthenticatedHeaders(),
             });
             setResponse(res);
         } catch (error) {
             console.error('Error verificando el email: ', error);
-            setResponse({ ok: false });
+            setResponse({ ok: false, message: error.message || 'Error desconocido' });
         } finally {
             setIsLoading(false);
         }
