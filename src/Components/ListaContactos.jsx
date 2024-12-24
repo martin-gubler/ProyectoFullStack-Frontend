@@ -42,12 +42,6 @@ const ListaContactos = () => {
             return;
         }
 
-        if (!contactExists) {
-            setContactError('El contacto no existe');
-            return;
-        }
-
-
         try {
             const response = await fetch (`${ENVIROMENT.URL_BACKEND}/api/contacts/add`, {
                 method: 'POST',
@@ -59,7 +53,7 @@ const ListaContactos = () => {
     
 
             if (!response.ok) {
-                throw new Error(result.message || 'Error al a;adir contacto')
+                throw new Error(result.message || 'Error al añadir contacto')
             }
 
             setContactos([...contactos, {name: newContact, _id: Date.now() }])
